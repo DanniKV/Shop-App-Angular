@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Customer} from '../models/customers';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AuthenticationService} from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,8 @@ export class CustomerService {
       {id: this.id++, firstName: 'Bill', lastName: 'Bo', address: 'Baggins'}];
   */
   }
+
+
   //CRUD Operations!
   getCustomers(): Observable<Customer[]> {
     //TODO Call Rest API!

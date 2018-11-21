@@ -8,13 +8,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CustomerUpdateComponent } from './customers/customer-update/customer-update.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LogInComponent } from './customers/log-in/log-in.component';
+import {AuthenticationService} from './shared/services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     WelcomeComponent,
     CustomerDetailsComponent,
     CustomerAddComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +36,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     HttpClientModule, //For use with real DB
     BrowserAnimationsModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
+
 
 ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

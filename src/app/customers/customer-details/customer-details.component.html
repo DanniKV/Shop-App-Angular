@@ -1,0 +1,14 @@
+<button mat-raised-button color="primary" routerLink="/customers">Back</button>
+<h1>Customer Details!</h1>
+
+<div *ngIf="customer">
+<h3>Customer ID: {{customer.id}}</h3>
+<h3>Customer Name: {{customer.firstName}} {{customer.lastName}}</h3>
+<h3>Customer Address: {{customer.address}}</h3>
+</div>
+
+<div *ngIf="!customer">
+  <h2> Customer Not Found!</h2>
+</div>
+
+

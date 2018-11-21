@@ -1,0 +1,21 @@
+<button mat-raised-button color="primary" routerLink="/customers">Back</button>
+
+<form [formGroup]="customerForm" (ngSubmit)="SaveCustomer()">
+
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <label>
+    Address:
+    <input type="text" formControlName="address">
+  </label>
+
+  <button mat-raised-button color="primary" type="submit">SaveCustomer</button>
+</form>

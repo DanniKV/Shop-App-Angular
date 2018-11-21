@@ -1,0 +1,46 @@
+<div class="container"
+     fxLayout="column"
+     fxFill
+     fxLayoutGap="10px">
+  <div fxLayout="row">
+    <button mat-raised-button color="primary" routerLink="/customer-add">Add Customer!</button>
+    <h4 *ngIf="!customers" fxFill fxLayoutAlign="center center">
+      <h2>LOADING!</h2>
+    </h4>
+  </div>
+<ul *ngIf="customers">
+  <li *ngFor="let customer of customers">
+    <div fxLayoutGap="5px">
+    <a routerLink="/customers/{{customer.id}}">
+      {{customer.firstName}} {{customer.lastName}}</a>
+      <button mat-mini-fab color="primary" routerLink="/customer-update/{{customer.id}}">Update</button>
+      <button mat-mini-fab color="warn" (click)="delete(customer.id)">Delete </button>
+    </div>
+  </li>
+</ul>
+
+<h1 *ngIf="!customers">Loading...</h1>
+</div>
+<!--
+<div class="container">
+  <div class="row">
+    <button class="btn btn-primary mt-1" routerLink="/pet-add">Add Pet</button>
+  </div>
+  <div class="row" *ngIf="!customer" >
+  </div>
+  <div class="row mt-1" *ngIf="customers">
+    <div class="col-6 pl-1 pr-1 mt-1" *ngFor="let customer of customers">
+      <div class="card">
+        <div class="card-body">
+          <a routerLink="/customers/{{customer.id}}">
+            {{customer.firstName}}</a>
+          <div> {{customer.lastName}}</div>
+        </div>
+        <div class="card-body text-right">
+          <button routerLink="/customer-update/{{customer.id}}" class="ml-1 btn btn-warning">Update</button>
+          <button (click)="delete(customer.id)" class="ml-1 btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  -->
